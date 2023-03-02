@@ -7,6 +7,7 @@ import { ContextMovie } from "@interfaces/Context.interface";
 import { Details } from "@pages/Details";
 import { Movies } from "@pages/Movies";
 import { Shows } from "@pages/Shows";
+import { NotFound } from "@pages/NotFound";
 
 export const App = () => {
   const { allTypesOfMovies, getAllMovies } = useContextMovies() as ContextMovie;
@@ -20,22 +21,14 @@ export const App = () => {
     <div className="relative">
       <NavBar />
       <Routes>
-        <Route
-          path="/"
-          element={<Home allMovies={allMovies} />}
-        />
-        <Route
-          path="/movies"
-          element={<Movies movies={movies} />}
-        />
-        <Route
-          path="/shows"
-          element={<Shows shows={shows} />}
-        />
+        <Route path="/" element={<Home allMovies={allMovies} />} />
+        <Route path="/movies" element={<Movies movies={movies} />} />
+        <Route path="/shows" element={<Shows shows={shows} />} />
         <Route
           path="/movie-details/:id"
           element={<Details movies={allMovies} />}
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
