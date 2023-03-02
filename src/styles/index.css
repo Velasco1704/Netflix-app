@@ -6,3 +6,13 @@ body{
   background-color: black;
   color: white;
 }
+
+body::-webkit-scrollbar{
+  background-color: black;
+  width: 7px;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: white;
+  width: 7px;
+  border-radius: 10px;
+}
