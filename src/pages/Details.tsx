@@ -6,7 +6,7 @@ export const Details = ({ movies }: { movies: Array<Movie> }) => {
   const { id } = useParams();
   const movieDetails = movies.find((movie) => movie.summary.id === Number(id));
   return (
-    <div className="mx-4 h-[90vh] flex flex-col justify-center gap-[70px]">
+    <div className="mx-4 h-[90vh] flex flex-col justify-center">
       <Link
         to="/"
         className="bg-white text-black flex items-center justify-center p-2 w-8 rounded-full"
